@@ -131,11 +131,13 @@
 #banner {
     background-image: url('#{request.contextPath}/resources/img/banner.jpg');
     background-size: cover;
-    width: 100%;
     height: auto;
     color: white;
     text-align: right;
     padding-left: 40%;
+    padding-right: 5%;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
 #banner h1 {
@@ -143,4 +145,23 @@
     padding: 150px 0;
     font-weight: bold;
     text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#informacoes{
+    text-align: center;
+}
+
+#informacoes p {
+    font-weight: bold;
+}
+
+#depoimento{
+    text-align: center;
+    background: yellow;
+    padding: 20px 0;
+}
+
+#depoimento img{
+    border-radius: 50%;
+    background: white;
 }
