@@ -1,0 +1,146 @@
+/* TOPBAR */
+.aw-topbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    min-height: 50px;
+    z-index: 9999;
+
+    background-color: rgb(190, 0, 25);
+}
+
+.aw-topbar > img {
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+/* SIDEBAR */
+.aw-sidebar {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    width: 210px;
+    margin-left: -211px;
+    z-index: 9998;
+    transition: margin-left 0.5s;
+    overflow-y: auto;
+
+    background-color: #f6f6f6;
+    border-right: 1px solid #eaeaea;
+}
+
+.aw-sidebar.is-toggled {
+    margin-left: 0px;
+}
+
+@media (min-width: 960px) {
+    .aw-sidebar {
+        margin-left: 0px;
+    }
+
+    .aw-sidebar.is-toggled {
+        margin-left: -211px;
+    }
+}
+
+/* CONTENT */
+.aw-content {
+    padding: 0 15px;
+    margin-top: 50px;
+    transition: margin-left 0.5s;
+}
+
+@media (min-width: 960px) {
+    .aw-content {
+        margin-left: 210px;
+    }
+
+    .aw-content.is-toggled {
+        margin-left: 0;
+    }
+}
+
+
+.boasvindas{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.boasvindas h1{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.boasvindas h2 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.boasvindas p{
+    font-size: 18px;
+}
+
+.logo{
+    text-decoration: none;
+    color: white;
+    font-family: 'Pacifico';
+    font-size: 25px;
+    padding-left: 25px;
+}
+
+.submenu {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.submenu button{
+    padding: 5px !important;
+}
+
+.comentario {
+    padding: 10px;
+}
+.comentario-contet {
+    font-size: 18px;
+}
+
+.escritopor {
+    text-align: right;
+    font-weight: bold;
+}
+
+#quem-somos {
+    text-align: center;
+}
+
+#quem-somos img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+@media (min-width: 765px){    
+    #quem-somos img{
+        width: 80%;
+    }
+
+}
+
+#banner {
+    background-image: url('#{request.contextPath}/resources/img/banner.jpg');
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: right;
+    padding-left: 40%;
+}
+
+#banner h1 {
+    font-size: 32px;
+    padding: 150px 0;
+    font-weight: bold;
+    text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

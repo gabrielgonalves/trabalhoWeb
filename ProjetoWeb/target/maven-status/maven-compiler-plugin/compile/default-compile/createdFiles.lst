@@ -1,0 +1,12 @@
+entidade/Usuario.class
+gerenciador/GerenciadorUsuarios.class
+gerenciador/GerenciadorDisciplinas.class
+entidade/TipoUsuario.class
+bean/LoginBean.class
+utilidades/Conexao.class
+entidade/Disciplina.class
+entidade/Topico.class
+entidade/Comentario.class
+bean/IndexBean.class
+utilidades/Sessao.class
+bean/DisciplinaBean.class

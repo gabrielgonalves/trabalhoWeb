@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/Layout.xhtml">
+
+    <ui:define name="content">
+        <p:outputPanel rendered="#{loginBean.logado}" >
+            <h:form>
+                <div class="submenu">
+                    <p:commandButton action="disciplina.xhtml" value="Voltar" />
+                </div>
+                <div class="ui-g ui-fluid">
+                    <div class="boasvindas">
+                        <h1>#{disciplinaBean.topico.assunto}</h1>
+                        <p>Pergunta feito por #{disciplinaBean.buscaUsuarioPorID().nome}</p>
+                        <h2>#{disciplinaBean.topico.conteudo}</h2>
+                    </div>
+                    <div class="ui-g-12">
+                        <p:dataList value="#{disciplinaBean.comentarios}" var="comentario" type="definition" emptyMessage="Nenhum comentário foi encontrado." >
+                            <div class="comentario">
+                                <h:outputText class="comentario-contet" value="#{comentario.comentario}" /><br/>
+                                <h:outputText class="escritopor" value="#{disciplinaBean.buscaUsuarioPorID(comentario.autor.id).login}" /><br/>
+                            </div>
+                        </p:dataList>
+                    </div>
+                    <div class="ui-g-12">
+                        <p:inputTextarea rows="10" placeholder="Digite seu comentário" value="#{disciplinaBean.comentario.comentario}" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:commandButton value="Inserir novo comentário" action="#{disciplinaBean.inserirComentario}" update="@form" />
+                    </div>
+                </div>
+            </h:form>
+        </p:outputPanel>
+
+        <p:outputPanel rendered="#{!loginBean.logado}" >
+            <div class="boasvindas">
+                <h1>Acesso negado</h1>
+                <p:button href="index.xhtml" value="Voltar" />
+            </div>
+        </p:outputPanel>
+    </ui:define>
+</ui:composition>

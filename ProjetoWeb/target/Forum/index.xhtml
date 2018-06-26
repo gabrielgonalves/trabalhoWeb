@@ -1,0 +1,105 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/LayoutIndex.xhtml">
+
+    <ui:define name="content">
+        <h:form>
+            <p:dialog style="z-index: 9999 !important;" width="500" header="Cadastro" modal="true" dynamic="true" resizable="false" responsive="true" position="center center" widgetVar="cadastrar" id="cadastrar">
+                <div class="ui-g ui-fluid">
+                    <div class="ui-g-12">
+                        <p:messages autoUpdate="true" closable="true" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:inputText placeholder="Nome" value="#{indexBean.usuario.nome}" required="true" requiredMessage="Digite seu nome" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:inputText placeholder="E-mail" value="#{indexBean.usuario.email}" required="true" requiredMessage="Digite um e-mail válido" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:inputText placeholder="Login" value="#{indexBean.usuario.login}" required="true" requiredMessage="Digite um login" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:password placeholder="Senha" value="#{indexBean.usuario.senha}" required="true" requiredMessage="Digite uma senha" />
+                    </div>
+                    <f:facet name="footer">
+                        <div class="ui-g-12">
+                            <p:commandButton value="Cadastrar" action="#{indexBean.cadastrar}" />
+                        </div>
+                    </f:facet>
+                </div>
+            </p:dialog>
+
+            <p:dialog width="500" resizable="false" header="Login" modal="true" dynamic="true" responsive="true" position="center center" widgetVar="login" id="login">
+                <div class="ui-g ui-fluid">
+                    <div class="ui-g-12">
+                        <p:messages autoUpdate="true" closable="true" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:inputText placeholder="Login" value="#{loginBean.usuario.login}" required="true" requiredMessage="Digite um login" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:password placeholder="Senha" value="#{loginBean.usuario.senha}" required="true" requiredMessage="Digite uma senha" />
+                    </div>
+                    <f:facet name="footer">
+                        <div class="ui-g-12">
+                            <p:commandButton value="Entrar" action="#{loginBean.entrar}" />
+                        </div>
+                    </f:facet>
+                </div>
+            </p:dialog>
+            <div class="ui-fluid">
+                <div class="ui-g-12" id="banner">
+                    <h1>Não perca tempo, utilize o nosso fórum para tirar as suas dúvidas relacionadas a todas as matérias ofertadas no campus Florestal</h1>
+                </div>
+                <div class="ui-g-12" id="informacoes">
+                    <div class="ui-g-12 ui-md-4">
+                        Mais de 1.000 alunos cadastrados
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        Mais de 5.000 tópicos solucionados
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        Mais de 200 disciplinas cadastradas
+                    </div>
+                </div>
+                <div class="ui-g-12" id="depoimento">
+                    teste
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <h1>Ficou alguma dúvida? Entre em contato</h1>
+                    <div class="ui-g-12">
+                        <p:inputText placeholder="Nome" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:inputText placeholder="E-mail" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:inputText placeholder="Assunto" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:inputTextarea rows="10" placeholder="Digite sua mensagem" />
+                    </div>
+                    <div class="ui-g-12">
+                        <p:commandButton value="Enviar" />
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6" id="quem-somos">
+                    <h1>Quem somos?</h1>
+                    <div class="ui-g-6">
+                        <p:graphicImage class="img-quem-somos" library="img" name="gabriel.jpg" />
+                        <br />
+                        Gabriel Gonçalves
+                    </div>
+                    <div class="ui-g-6">
+                        <p:graphicImage class="img-quem-somos" library="img" name="heverton.jpeg" />
+                        <br />
+                        Heverton Souza
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

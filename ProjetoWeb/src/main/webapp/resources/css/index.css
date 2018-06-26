@@ -1,0 +1,16 @@
+
+#quem-somos {
+    text-align: center;
+}
+
+#quem-somos img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+@media (min-width: 765px){    
+    #quem-somos img{
+        width: 80%;
+    }
+
+}
